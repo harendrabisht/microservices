@@ -5,7 +5,8 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var profileRouter = require('./routes/profile');
+var profileRouter = require('./routes/profile.router');
+const healthRouter = require('./routes/health.router');
 
 var app = express();
 
@@ -17,6 +18,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/profile', profileRouter);
+app.use('/health', healthRouter);
+
 // Connect to mongoDB
 let mongoDB = process.env.MONGODB_URL || "mongodb://localhost:27017/users";
 mongoose.connect(mongoDB, {

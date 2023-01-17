@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const { checkHealth } = require('./health')
+const { checkHealth } = require('./health.controller')
 
 describe('check health', () => {
     it('healt check should be OK', () => {

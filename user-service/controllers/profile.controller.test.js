@@ -9,7 +9,7 @@ const rewire = require('rewire');
 const PersonalInfo = require('../model/personal-info');
 const sandbox = sinon.createSandbox();
 
-let profileController = rewire('./profile');
+let profileController = rewire('./profile.controller');
 // jest.setTimeout(30000);
 
 describe('Profile Controller', () => {
@@ -38,7 +38,7 @@ describe('Profile Controller', () => {
     });
 
     afterEach(() => {
-        profileController = rewire('./profile');
+        profileController = rewire('./profile.controller');
         sinon.restore();
     });
 

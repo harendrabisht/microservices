@@ -29,6 +29,6 @@ const PersonalnfoSchema = new Schema({
     }]
 });
 
-module.exports = mongoose.model('PersonalInfo', PersonalnfoSchema);
+module.exports = mongoose.models.PersonalInfo || mongoose.model('PersonalInfo', PersonalnfoSchema);
 
 
