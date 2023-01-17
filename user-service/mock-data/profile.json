@@ -1,0 +1,38 @@
+{
+    "name": "harendra singh",
+    "uid": "1234",
+    "mobileNumber": "991111111",
+    "subscriptionId": "131131",
+    "emailId": "xyz@gmail.com",
+    "shippingAddress": [{
+        "isPrimary": true,
+        "addressId": "121",
+        "addressLine1": "address line 1",
+        "addressLine2": "address line 2",
+        "city": "Noida",
+        "pincode": "102022",
+        "geoLocation": {
+            "lat": "1131",
+            "long": "1311"
+        }
+    }],
+    "billingAddress": [{
+        "isPrimary": true,
+        "addressId": "121",
+        "addressLine1": "address line 1",
+        "addressLine2": "address line 2",
+        "city": "Noida",
+        "pincode": "102022",
+        "geoLocation": {
+            "lat": "1131",
+            "long": "1311"
+        }
+    }],
+    "preferences": {
+        "notification": {
+            "mobile": false,
+            "sms": true,
+            "email": false
+        }
+    }
+}
