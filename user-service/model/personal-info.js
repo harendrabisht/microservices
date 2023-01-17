@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PersonalnfoSchema = new Schema({
+    userId: {
+        type: String
+    },
     firstName: {
         type: String,
         required: true,
@@ -16,7 +19,11 @@ const PersonalnfoSchema = new Schema({
     email: {
         type: String,
     },
-    addresses: [{
+    shippingAddress: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Address'
+    }],
+    billingAddress: [{
         type: Schema.Types.ObjectId,
         ref: 'Address'
     }]
