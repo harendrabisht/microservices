@@ -16,6 +16,3 @@ const productSchema = buildSchema(`
 `);
 
 export default productSchema;
-
-// searchProducts(searchkey: String): [Prouduct]
-//         getProductDetail(id: !Id): Product

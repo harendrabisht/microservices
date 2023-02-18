@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-app-deployment
+  labels:
+    name: product-deployment
+    app: product-micro-service
+spec:
+  selector:
+    matchLabels:
+      app: product-app
+  template:
+    metadata:
+      labels:
+        app: product-app
+    spec:
+      containers:
+      - name: product-app
+        image: harendra1987/product-service:0.0.1
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        env:
+          - name: DB_URL
+            value: mongodb://mongo:27017/product-service
+          - name: GRAPHQL_PATH
+            value: graphql

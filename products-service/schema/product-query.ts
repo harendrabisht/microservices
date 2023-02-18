@@ -1,5 +1,4 @@
 const productQueries = {
-    hello: () => { return "hello" },
     searchProducts: () => {
         return [{
             productId: '412214212',
