@@ -5,6 +5,7 @@ var logger = require('morgan');
 const httpLogger = require('./error-controller/http-logger');
 const { logError, returnError } = require('./error-controller/error-handler')
 const mongoose = require('mongoose');
+const { dbUrl } = require('./envs');
 
 
 var indexRouter = require('./routes/index');
@@ -15,8 +16,8 @@ var app = express();
 
 app.use(logger('dev'));
 app.use(httpLogger);
-app.use(logError);
-app.use(returnError);
+// app.use(logError);
+// app.use(returnError);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -27,8 +28,8 @@ app.use('/profile', profileRouter);
 app.use('/health', healthRouter);
 
 // Connect to mongoDB
-let mongoDB = process.env.MONGODB_URL || "mongodb://localhost:27017/users";
-mongoose.connect(mongoDB, {
+
+mongoose.connect(dbUrl, {
 	useNewUrlParser: true
 });
 mongoose.Promise = global.Promise;
