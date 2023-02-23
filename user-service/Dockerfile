@@ -4,5 +4,6 @@ COPY package.json ./
 COPY . .
 RUN npm install
 RUN  npm install -g nodemon
-ENV PORT 4001
+ENV PORT 80
+EXPOSE 80
 CMD ["nodemon", "./bin/www"]

@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: product-app-deployment
+  namespace: foodie
   labels:
-    name: product-deployment
+    name: product-service
     app: product-micro-service
 spec:
   selector:
