@@ -6,6 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/targer-type: ip
   labels:
     app: foodie-ingress
 spec:
@@ -16,7 +17,7 @@ spec:
             backend:
               serviceName: product-service
               servicePort: 80
-          - path: /user
+          - path: /*
             backend:
               serviceName: user-service
               servicePort: 80
