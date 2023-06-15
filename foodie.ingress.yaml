@@ -4,9 +4,8 @@ metadata:
   name: "food-app-router"
   namespace: "foodie"
   annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/targer-type: ip
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
   labels:
     app: foodie-ingress
 spec:
@@ -16,8 +15,8 @@ spec:
           - path: /product
             backend:
               serviceName: product-service
-              servicePort: 80
+              servicePort: 30007
           - path: /*
             backend:
               serviceName: user-service
-              servicePort: 80
+              servicePort: 30005

@@ -17,7 +17,7 @@
 I am using Docker alogn with kubernates as Container Orchestrator. 
 I used AWS as cloud provider and using Elastic Container Service.
 
-![High level Diagram](https://tools.publicis.sapient.com/bitbucket/projects/TXSB/repos/harendra-bisht/browse/high-level-diagram.png)
+![High level Diagram]()
 
 For the starting i have created 2 microservices. One for the product service and another is user-service. Both the services is hosted on EKS cluster. The applicatation nodes are deployed under the namespace called `foodie`.
 The manifest/configuation file to run the pods are in the respective folders.
@@ -25,17 +25,15 @@ For the database, i chose mongoDB for product service and user service. The reas
 
 For mongoDB, i am running the mongo Container.
 I have created product service image using the
-> [DockerFile](https://tools.publicis.sapient.com/bitbucket/projects/TXSB/repos/harendra-bisht/browse/products-service/Dockerfile)
+> [DockerFile]()
 
 Product-service, pods deployed using deployment.
-> [Product Service Deployment](https://tools.publicis.sapient.com/bitbucket/projects/TXSB/repos/harendra-bisht/browse/products-service/product-service.deployment.yaml)
+> [Product Service Deployment]
 
 Similarly, User-service container image is also created and deployed on same cluster.
 
 ```sh
 kubectl get all --namespace=foodie
-```
-[https://tools.publicis.sapient.com/bitbucket/projects/TXSB/repos/harendra-bisht/browse/EKS%20Cluster.png](https://tools.publicis.sapient.com/bitbucket/projects/TXSB/repos/harendra-bisht/browse/EKS%20Cluster.png)
 
 #### TDD Framework
 - mocha

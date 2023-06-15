@@ -43,9 +43,10 @@ metadata:
     name: user-service
     app: user-micro-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: user-app
   ports:
   - port: 80
     targetPort: 80
+    nodePort: 30005
